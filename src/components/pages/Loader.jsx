@@ -97,7 +97,7 @@ function Loading() {
               <Box sx={{ display: "flex", flexDirection: "row", gap: 3 }}>
                 {/* Card 1 */}
                 
-                <Card sx={{ bgcolor: "black", borderRadius: 2 }}>
+                <Card sx={{ bgcolor:theme.palette.background.default,color:theme.palette.text.primary, borderRadius: 2 }}>
                   <Box sx={{ p: 2 }}>
                     <Box sx={{ position: "relative" }}>
                       <img
@@ -147,7 +147,7 @@ function Loading() {
                 </Card>
 
                 {/* Card 2 */}
-                <Card sx={{ bgcolor: "black", borderRadius: 2 }}>
+                <Card sx={{ bgcolor:theme.palette.background.default,color:theme.palette.text.primary, borderRadius: 2 }}>
                   <Box sx={{ p: 2 }}>
                     <Box sx={{ position: "relative" }}>
                       <img

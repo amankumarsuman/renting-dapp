@@ -18,7 +18,7 @@ function Footer() {
               <img
                 src={require("../../images/logo/logo.png")}
                 alt="logo"
-                style={{ marginBottom: 16 }}
+                style={{ marginBottom: 16,bgcolor:theme.palette.background.default,color:theme.palette.text.primary }}
               />
               <Typography variant="body1" >
                 Please contact us if you have any specific <br /> idea or request.
