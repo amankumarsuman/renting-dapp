@@ -1,5 +1,5 @@
-import React from "react";
-import "./App.css";
+import React, { useState } from "react";
+// import "./App.css";
 import ResponsiveAppBar from "./components/Navbar/Navbar";
 import { ThirdwebProvider } from "thirdweb/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,14 +11,21 @@ import Footer from "./components/pages/Footer";
 import AboutUs from "./components/pages/AboutUs";
 import Join from "./components/pages/Join";
 import Developers from "./components/pages/Developers";
-
+import { darkTheme,lightTheme } from "./utils/theme";
+import { ThemeProvider, createTheme, useColorScheme } from '@mui/material/styles';
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
   return (
     <div >
-
+ {/* <ThemeProvider theme={theme}> */}
+ <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
     <ThirdwebProvider>
       <BrowserRouter>
-        <ResponsiveAppBar />
+        <ResponsiveAppBar toggleTheme={toggleTheme} isDarkMode={isDarkMode}/>
         <Loading/>
         <Partners/>
         <Properties/>
@@ -32,6 +39,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ThirdwebProvider>
+ </ThemeProvider>
     </div>
   );
 }

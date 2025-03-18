@@ -1,10 +1,11 @@
 import React from "react";
-import { Container, Box, Typography, Grid } from "@mui/material";
+import { Container, Box, Typography, Grid, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 
 function Footer() {
+  const theme=useTheme()
   return (
-    <Box component="footer" sx={{ color:"white", py: 5 }}>
+    <Box component="footer" sx={{ bgcolor:theme.palette.background.default,color:theme.palette.text.primary, py: 5 }}>
       <Container>
         <Grid container spacing={4} justifyContent="space-between">
           {/* Logo and Description */}
@@ -34,7 +35,7 @@ function Footer() {
               style={{ display: "flex", gap: 40 }}
             >
               <Box>
-                <Typography variant="h6" color="white" sx={{ mb: 2, textTransform: "uppercase" }}>
+                <Typography variant="h6"  sx={{ mb: 2, textTransform: "uppercase" }}>
                   Company
                 </Typography>
                 <Box component="ul" sx={{ listStyle: "none", p: 0 }}>

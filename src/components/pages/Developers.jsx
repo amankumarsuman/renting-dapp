@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import AnimationTitles from "../components/functions/AnimationTitles";
@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 import AnimationTitles from "../../utils/AnimationTitles";
 
 function Developers() {
+  const theme=useTheme()
   return (
-    <Box sx={{ bgcolor: "background.default", py: 8 }}>
+    <Box sx={{ bgcolor:theme.palette.background.default,color:theme.palette.text.primary, py: 8 }}>
       <Box sx={{ maxWidth: 1200, mx: "auto", px: 3 }}>
         <AnimationTitles title="Our the best developers" align="center" />
         <Typography variant="body1" color="text.secondary" align="center" sx={{ mb: 5 }}>
@@ -47,7 +48,7 @@ function Developers() {
                     alt={dev.name}
                     style={{ marginRight: 16 }}
                   />
-                  <Typography variant="h6" color="text.primary">
+                  <Typography variant="h6" sx={{color:theme.palette.text.primary}}>
                     {dev.name}
                   </Typography>
                 </Box>

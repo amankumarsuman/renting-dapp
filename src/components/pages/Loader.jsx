@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Container, Typography, Box, Grid } from "@mui/material";
+import { Button, Card, Container, Typography, Box, Grid, useTheme } from "@mui/material";
 // import CountDown from "../components/functions/CountDown";
 import { motion } from "framer-motion";
 // import AnimationTitles from "../components/functions/AnimationTitles";
@@ -10,6 +10,7 @@ import AnimationTitles from "../../utils/AnimationTitles";
 
 function Loading() {
   // Like button functionality
+  const theme=useTheme()
   const [liked, setLiked] = React.useState(false);
 
   const handleLike = () => {
@@ -17,7 +18,7 @@ function Loading() {
   };
 
   return (
-    <Box sx={{ position: "relative" }}>
+    <Box sx={{ position: "relative",bgcolor:theme.palette.background.default,color:theme.palette.text.primary }}>
       <Container>
         <Grid
           container
@@ -27,7 +28,7 @@ function Loading() {
             justifyContent: "space-between",
             alignItems: "center",
             flexDirection: { xs: "column", md: "row" },
-            mt: 3,
+            mt: 0,
           }}
         >
           {/* Left Section */}

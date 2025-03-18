@@ -1,12 +1,14 @@
 import React from "react";
-import { Container, Box, Typography, Button, Grid } from "@mui/material";
+import { Container, Box, Typography, Button, Grid, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import AnimationTitles from "../../utils/AnimationTitles";
+// import { useTheme } from "@emotion/react";
 // import AnimationTitles from "../components/functions/AnimationTitles";
 
 function AboutUs() {
+  const theme=useTheme()
   return (
-    <Box sx={{  py: 8 }}>
+    <Box sx={{  py: 8,bgcolor:theme.palette.background.default,color:theme.palette.text.primary }}>
       <Container>
         <Grid container spacing={4} alignItems="center">
           {/* Left Section */}

@@ -23,11 +23,12 @@ import {
 import { client } from "../../client";
 import { polygonMumbai } from "wagmi/chains";
 import { useNavigate } from "react-router-dom";
-
+import Brightness4Icon from "@mui/icons-material/Brightness4"; // Moon icon for dark mode
+import Brightness7Icon from "@mui/icons-material/Brightness7"; // Sun icon for light mode
 const pages = ["Marketplace", "About Us", "Developers"];
 const settings = ["Profile", "Logout"];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ toggleTheme, isDarkMode }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -86,8 +87,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-                      <img  src={require("../../images/logo/logo.png")} alt="logo" />
-
+            <img src={require("../../images/logo/logo.png")} alt="logo" />
           </Typography>
 
           {/* Mobile menu */}
@@ -159,7 +159,14 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
+          {/* Theme Toggle Button */}
+          <IconButton
+            sx={{ ml: 1, color: "white" }}
+            onClick={toggleTheme}
+            aria-label="toggle theme"
+          >
+            {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
           {/* Wallet connection and profile */}
           <Box sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}>
             {/* Wallet connection (mobile and desktop) */}

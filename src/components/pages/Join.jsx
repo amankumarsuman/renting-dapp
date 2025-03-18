@@ -1,13 +1,14 @@
 import React from "react";
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, useTheme } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import AnimationTitles from "../../utils/AnimationTitles";
 // import AnimationTitles from "../components/functions/AnimationTitles";
 
 function Join() {
+  const theme=useTheme()
   return (
-    <Box sx={{ bgcolor: "background.default", py: 8 }}>
+    <Box sx={{ bgcolor:theme.palette.background.default,color:theme.palette.text.primary, py: 8 }}>
       <Container>
         <Swiper
           grabCursor={true}
@@ -48,7 +49,7 @@ function Join() {
           ].map((item, index) => (
             <SwiperSlide key={index}>
               <Box sx={{ p: 3, textAlign: "left" }}>
-                <Typography variant="h4" color="text.secondary" sx={{ mb: 3 }}>
+                <Typography variant="h4"  sx={{ mb: 3 }}>
                   {item.number}
                 </Typography>
                 <img
@@ -57,7 +58,7 @@ function Join() {
                   style={{ width: "100%" }}
                 />
                 <AnimationTitles title={item.title} sx={{ my: 3 }} />
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" >
                   {item.description}
                 </Typography>
               </Box>

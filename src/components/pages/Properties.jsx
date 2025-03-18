@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button, Card, Typography, Box } from "@mui/material";
+import { Container, Button, Card, Typography, Box, useTheme } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -24,9 +24,9 @@ function Properties() {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
+const theme=useTheme()
   return (
-    <Box sx={{  py: 4 }}>
+    <Box sx={{  py: 4,bgcolor:theme.palette.background.default,color:theme.palette.text.primary }}>
       <Container>
         <AnimationTitles title="Discover more properties" />
         {/* Tabs */}
